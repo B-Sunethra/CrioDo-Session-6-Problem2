@@ -107,7 +107,7 @@ const App = () => {
           placeholder="Search a song of your choice"
           onSearch={handleSearch}
         />
-        <Button label="Give Feedback" onClick={handleButtonClick} />
+        <Button label="Give Feedback" onClick={handleButtonClick} style={{ fontFamily: 'Poppins' }}/>
       </div>
     </div>
   );
