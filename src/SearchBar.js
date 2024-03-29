@@ -60,6 +60,7 @@ const Button = ({ label, onClick }) => {
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
     fontWeight: "bold",
     marginLeft: "8px",
+    fontFamily: 'Poppins',
   };
 
   return (
@@ -107,7 +108,7 @@ const App = () => {
           placeholder="Search a song of your choice"
           onSearch={handleSearch}
         />
-        <Button label="Give Feedback" onClick={handleButtonClick} style={{ fontFamily: 'Poppins' }}/>
+        <Button label="Give Feedback" onClick={handleButtonClick}/>
       </div>
     </div>
   );
