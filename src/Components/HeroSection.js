@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeroSection.css"; // make sure to create this CSS file in your project
-import logo from "./assets/vibrating-headphone.png";
+import logo from "../assets/vibrating-headphone.png";
 
 const HeroSection = () => {
   return (
