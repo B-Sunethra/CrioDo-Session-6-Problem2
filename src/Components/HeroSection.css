@@ -1,0 +1,27 @@
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212; /* Set the background color */
+  padding: 20px; /* Add some padding */
+}
+
+.content {
+  text-align: center; /* Center the text */
+}
+
+.sub-title,
+.main-title {
+  font-family: "Poppins";
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  color: #ffffff; /* Assuming the text is white */
+  margin: 0; /* Remove default margin */
+}
+
+.headphones-image {
+  width: auto; /* You can adjust this as needed */
+  height: 100px; /* You can adjust this as needed */
+  margin-left: 20px; /* Add some space between text and image */
+}
