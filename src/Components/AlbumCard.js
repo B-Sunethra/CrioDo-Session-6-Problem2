@@ -7,19 +7,19 @@ import { styled } from '@mui/material/styles';
 
 const OuterCardStyles = {
     height: 232,
-    width:159,
+    width:130,
     // margin: '0px 20px' 
 }
 
 const StyledCard = styled(Card)({
     height: 210,
-    width:159,
+    width:"100%",
   position: 'relative',
 });
 
 const StyledCardMedia = styled(CardMedia)({
   height: 170,
-  width:159
+  width:"100%"
 });
 
 const StyledChip = styled(Chip)({
