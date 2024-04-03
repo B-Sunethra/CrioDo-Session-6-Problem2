@@ -9,6 +9,7 @@ export default function App() {
     <div className="App">
       <SearchBar />
       <HeroSection />
+      <AlbumLayout />
     </div>
   );
 }
