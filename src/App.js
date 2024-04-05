@@ -1,4 +1,6 @@
 import React from 'react';
+import SearchBar from "./SearchBar";
+import HeroSection from "./Components/HeroSection";
 import AlbumLayout from './Components/AlbumLayout';
 
 function App() {
