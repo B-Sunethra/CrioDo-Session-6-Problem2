@@ -3,7 +3,7 @@ import AlbumCard from './AlbumCard'
 import axios from 'axios'
 
 
-function AlbumLayout() {
+function AlbumLayout({headerLeft, headerRight, fetchAPI}) {
 
     const [songs, setSongs] = useState([]);
 
@@ -11,7 +11,7 @@ function AlbumLayout() {
     // Function to fetch the data and parse it
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://qtify-backend-labs.crio.do/albums/top');
+        const response = await axios.get(fetchAPI);
         // Assuming the data structure includes a `songs` array as in the attached image
         console.log(response.data);
         setSongs(response.data);
@@ -72,8 +72,8 @@ function AlbumLayout() {
   return (
     <div style={divStyle}>
     <div style={headerStyle}>
-        <div style={topSongsStyle}>Top Songs</div>
-        <button style={collapseStyle}>Collapse</button>
+        <div style={topSongsStyle}>{headerLeft}</div>
+        <button style={collapseStyle}>{headerRight}</button>
     </div>
     <div style={styles}>
 
