@@ -1,15 +1,13 @@
-import "./styles.css";
-import Button from "./Button";
-import SearchBar from "./SearchBar";
-import HeroSection from "./Components/HeroSection";
+import React from 'react';
 import AlbumLayout from './Components/AlbumLayout';
 
-export default function App() {
+function App() {
   return (
-    <div className="App">
-      <SearchBar />
-      <HeroSection />
-      <AlbumLayout />
+    <div>
+      <AlbumLayout headerLeft="Top Albums" headerRight="Collapse" fetchAPI="https://qtify-backend-labs.crio.do/albums/top"/>
+      <AlbumLayout headerLeft="New Albums" headerRight="Collapse" fetchAPI="https://qtify-backend-labs.crio.do/albums/new"/>
     </div>
   );
 }
+
+export default App;
