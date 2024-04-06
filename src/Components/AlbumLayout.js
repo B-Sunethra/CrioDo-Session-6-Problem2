@@ -1,11 +1,13 @@
 import React, { useState,useEffect } from 'react'
 import AlbumCard from './AlbumCard'
 import axios from 'axios'
+import Carousel from './Carousel';
 
 
 function AlbumLayout({headerLeft, headerRight, fetchAPI}) {
 
     const [songs, setSongs] = useState([]);
+    const [showCarousel, setShowCarousel] = useState(false);
 
   useEffect(() => {
     // Function to fetch the data and parse it
@@ -22,8 +24,18 @@ function AlbumLayout({headerLeft, headerRight, fetchAPI}) {
 
     // Call the fetchData function
     fetchData();
-    }, []); 
+    }, [fetchAPI]); 
 
+    const toggleView = () => {
+      setShowCarousel(prevShowCarousel => !prevShowCarousel); // Toggle the state
+    };
+
+    // const adjustedCollapseStyle = {
+    //   ...collapseStyle,
+    //   // Additional styles if needed
+    // };
+
+    
     const divStyle = {
         background: '#121212',
     }
@@ -69,34 +81,50 @@ function AlbumLayout({headerLeft, headerRight, fetchAPI}) {
         outline: 'none'
       }
 
-  return (
-    <div style={divStyle}>
-    <div style={headerStyle}>
-        <div style={topSongsStyle}>{headerLeft}</div>
-        <button style={collapseStyle}>{headerRight}</button>
-    </div>
-    <div style={styles}>
-
+      const adjustedCollapseStyle = {
+        ...collapseStyle,
+        // Additional styles if needed
+      };
     
-    {songs.map((song, index) => (
-
-          <AlbumCard key={song.id}
-        albumImage={song.image}
-        follows={song.follows}
-        albumName={song.title}
-      /> 
-        
-      ))}
-
-
-      {/* <AlbumCard
-        albumImage="https://images.pexels.com/photos/242140/pexels-photo-242140.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
-        follows="100"
-        albumName="Bollywood Covers"
-      />     */}
-
+  return (
+<div style={divStyle}>
+      <div style={headerStyle}>
+        <div style={topSongsStyle}>{headerLeft}</div>
+        <button style={adjustedCollapseStyle} onClick={toggleView}>
+          {showCarousel ? 'Show All' : headerRight}
+        </button>
+      </div>
+      {showCarousel ? (
+        <Carousel
+        slidesToShow={4} // Example, adjust based on your design
+        autoPlay={true}
+        autoPlaySpeed={3000}
+        infiniteLoop={true}
+        showArrows={true}
+      >
+        {songs.map((song, index) => (
+          <AlbumCard
+            key={song.id}
+            albumImage={song.image}
+            follows={song.follows}
+            albumName={song.title}
+          />
+        ))}
+      </Carousel>
+      ) : (
+        <div style={styles}>
+          {songs.map((song, index) => (
+            <AlbumCard
+              key={song.id}
+              albumImage={song.image}
+              follows={song.follows}
+              albumName={song.title}
+            />
+          ))}
+        </div>
+      )}
     </div>
-    </div>
+
     
   )
 }
