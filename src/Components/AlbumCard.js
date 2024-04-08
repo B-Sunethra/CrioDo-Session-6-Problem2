@@ -44,13 +44,7 @@ const StyledTypography = styled(Typography)({
   color: '#FFFFFF'
 });
 
-export default function AlbumCard({ albumImage, follows, albumName }) {
-
-    const style = {
-        display: 'flex',
-        flexDirection: 'column',        
-        alignItems: 'center',             
-      };
+export default function AlbumCard({ albumImage, follows, albumName, styledChipText }) {
     
   return (
     <div style={OuterCardStyles}>
@@ -61,7 +55,7 @@ export default function AlbumCard({ albumImage, follows, albumName }) {
       />
 
       <StyledChip
-        label={`${follows} Follows`}
+        label={styledChipText ? `${follows} ${styledChipText}` : `${follows} Follows`}
       />
       </StyledCard>  
 
