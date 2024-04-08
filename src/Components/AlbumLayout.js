@@ -91,7 +91,7 @@ function AlbumLayout({headerLeft, headerRight, fetchAPI}) {
       <div style={headerStyle}>
         <div style={topSongsStyle}>{headerLeft}</div>
         <button style={adjustedCollapseStyle} onClick={toggleView}>
-          {!showCarousel ? 'show all' : headerRight}
+          {!showCarousel ? 'Show All' : headerRight}
         </button>
       </div>
       {showCarousel ? (
