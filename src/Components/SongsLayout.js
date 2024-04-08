@@ -77,6 +77,7 @@ const filteredSongs = selectedTab === 0
                         albumImage={song.image}
                         follows={song.likes} // Assuming the songs data has a 'follows' field
                         albumName={song.title}
+                        styledChipText="Likes"
                     />
                 ))}
             </Carousel>
