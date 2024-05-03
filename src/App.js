@@ -3,15 +3,17 @@ import SearchBar from "./SearchBar";
 import HeroSection from "./Components/HeroSection";
 import AlbumLayout from './Components/AlbumLayout';
 import SongsLayout from './Components/SongsLayout';
+import Stopwatch from './StopWatch';
 
 function App() {
   return (
     <div>
-      <SearchBar />
-      <HeroSection />
-      <AlbumLayout headerLeft="Top Albums" headerRight="Collapse" fetchAPI="https://qtify-backend-labs.crio.do/albums/top"/>
-      <AlbumLayout headerLeft="New Albums" headerRight="Collapse" fetchAPI="https://qtify-backend-labs.crio.do/albums/new"/>
-      <SongsLayout/>
+      // <SearchBar />
+      // <HeroSection />
+      // <AlbumLayout headerLeft="Top Albums" headerRight="Collapse" fetchAPI="https://qtify-backend-labs.crio.do/albums/top"/>
+      // <AlbumLayout headerLeft="New Albums" headerRight="Collapse" fetchAPI="https://qtify-backend-labs.crio.do/albums/new"/>
+      // <SongsLayout/>
+    <Stopwatch/>
     </div>
   );
 }
